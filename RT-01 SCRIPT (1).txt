@@ -1,0 +1,36 @@
+enable
+configure terminal
+hostname RT-01
+banner motd "ACESSO APENAS PARA O DEPARTAMENTO DE TI"
+enable secret SenhadaEnable
+username ruthbraga privilege 15 secret bolo
+username kaikyreis privilege 15 secret bolo
+username jadisson privilege 15 secret bolo
+username guilhermecezar privilege 15 secret bolo
+username Leonardomelo privilege 15 secret bolo
+login block-for 280 attempts 7 within 600
+ip domain-name rede6.local
+crypto key generate rsa general-keys modulus 1024
+line vty 0 15
+login local
+transport input ssh
+exec-timeout 5
+exit
+line console 0
+password SenhadaConsole
+login
+exit
+service password-encryption
+interface gigabitEthernet 0/1
+no shutdown
+interface gigabitEthernet 0/1.26
+encapsulate Dot1Q 26
+ip address 192.168.26.1 255.255.255.0
+ip  helper-address 192.168.249.5
+interface gigabitEthernet 0/1.126
+encapsulate Dot1Q 126
+ip address 192.168.249.1 255.255.255.0
+ip  helper-address 192.168.249.5
+no shutdown
+exit
+do wr
