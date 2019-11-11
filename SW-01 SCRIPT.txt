@@ -4,10 +4,10 @@ hostname SW-1
 banner motd "ACESSO APENAS PARA O DEPARTAMENTO DE TI"
 enable secret SenhadaEnable
 username ruthbraga privilege 15 secret bolo
-username kaikyreis privilege 15 secret bolo
-username jadisson privilege 15 secret bolo
-username guilhermecezar privilege 15 secret bolo
-username Leonardomelo privilege 15 secret bolo
+username kaikyreis privilege 15 secret ted16m12
+username jadisson privilege 15 secret meucu
+username guilhermecezar privilege 15 secret gatinha
+username Leonardomelo privilege 15 secret bolo2
 login block-for 280 attempts 7 within 600
 ip domain-name rede6.local
 crypto key generate rsa general-keys modulus 1024
