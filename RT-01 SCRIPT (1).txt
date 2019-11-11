@@ -24,11 +24,11 @@ service password-encryption
 interface gigabitEthernet 0/1
 no shutdown
 interface gigabitEthernet 0/1.26
-encapsulate Dot1Q 26
+encapsulation Dot1Q 26
 ip address 192.168.26.1 255.255.255.0
 ip  helper-address 192.168.249.5
 interface gigabitEthernet 0/1.126
-encapsulate Dot1Q 126
+encapsulation Dot1Q 126
 ip address 192.168.249.1 255.255.255.0
 ip  helper-address 192.168.249.5
 no shutdown
